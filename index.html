@@ -38,12 +38,20 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
-        /* Секция Hero с переданной картинкой и затемняющим градиентом */
+        /* Секция Hero: Градиент темный слева для текста и прозрачный справа для машины */
         .hero-bg {
-            background-image: linear-gradient(rgba(3, 7, 18, 0.6), rgba(3, 7, 18, 0.9)), url('Снимок экрана 2026-09-30 в 16.22.30.jpg');
+            background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95) 0%, rgba(3, 7, 18, 0.7) 45%, rgba(3, 7, 18, 0.1) 100%), url('car-bg.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        /* На мобильных устройствах делаем градиент сверху вниз для лучшей читаемости */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-image: linear-gradient(to bottom, rgba(3, 7, 18, 0.9) 0%, rgba(3, 7, 18, 0.6) 50%, rgba(3, 7, 18, 0.2) 100%), url('car-bg.jpg');
+                background-position: center right;
+            }
         }
 
         /* Плавные переходы для интерактивных элементов */
@@ -121,7 +129,6 @@
                 В нашей работе мы используем только передовое оборудование, премиальные расходные материалы и инновационные технологии подбора цвета. Наша команда состоит из сертифицированных мастеров, влюбленных в свое дело, которые гарантируют результат на высшем уровне.
             </p>
             
-            <!-- Преимущества списком по центру -->
             <div class="inline-block text-left bg-dark-800/50 p-8 rounded-2xl border border-gray-800">
                 <ul class="space-y-5">
                     <li class="flex items-center text-gray-300 text-lg">
@@ -156,7 +163,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Услуга 1 -->
                 <div class="service-card bg-dark-800 rounded-2xl p-8 border border-gray-700 hover:border-brand-500/50 group flex flex-col h-full">
                     <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-500 group-hover:border-brand-500 transition-colors shadow-lg">
                         <i class="fa-solid fa-car text-2xl text-brand-500 group-hover:text-white transition-colors"></i>
@@ -167,7 +173,6 @@
                     </p>
                 </div>
 
-                <!-- Услуга 2 -->
                 <div class="service-card bg-dark-800 rounded-2xl p-8 border border-gray-700 hover:border-brand-500/50 group flex flex-col h-full">
                     <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-500 group-hover:border-brand-500 transition-colors shadow-lg">
                         <i class="fa-solid fa-fill-drip text-2xl text-brand-500 group-hover:text-white transition-colors"></i>
@@ -178,7 +183,6 @@
                     </p>
                 </div>
 
-                <!-- Услуга 3 -->
                 <div class="service-card bg-dark-800 rounded-2xl p-8 border border-gray-700 hover:border-brand-500/50 group flex flex-col h-full">
                     <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-500 group-hover:border-brand-500 transition-colors shadow-lg">
                         <i class="fa-solid fa-wand-magic-sparkles text-2xl text-brand-500 group-hover:text-white transition-colors"></i>
@@ -189,7 +193,6 @@
                     </p>
                 </div>
 
-                <!-- Услуга 4 -->
                 <div class="service-card bg-dark-800 rounded-2xl p-8 border border-gray-700 hover:border-brand-500/50 group flex flex-col h-full">
                     <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-500 group-hover:border-brand-500 transition-colors shadow-lg">
                         <i class="fa-solid fa-hammer text-2xl text-brand-500 group-hover:text-white transition-colors"></i>
@@ -203,7 +206,6 @@
         </div>
     </section>
 
-    <!-- НОВАЯ СЕКЦИЯ: Галерея -->
     <section id="gallery" class="py-24 bg-dark-900 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -212,9 +214,7 @@
                 <p class="text-gray-400 text-lg">Качественный результат, которым мы гордимся. Посмотрите, как преображаются автомобили в руках наших мастеров.</p>
             </div>
 
-            <!-- Сетка из 4 квадратных плит -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Плитка 1 -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-square bg-dark-800 border border-gray-700 cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80" alt="Работа 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -223,7 +223,6 @@
                     </div>
                 </div>
                 
-                <!-- Плитка 2 -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-square bg-dark-800 border border-gray-700 cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=800&q=80" alt="Работа 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -232,7 +231,6 @@
                     </div>
                 </div>
 
-                <!-- Плитка 3 -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-square bg-dark-800 border border-gray-700 cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1552930294-6b595f4c2974?auto=format&fit=crop&w=800&q=80" alt="Работа 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -241,7 +239,6 @@
                     </div>
                 </div>
 
-                <!-- Плитка 4 -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-square bg-dark-800 border border-gray-700 cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1632731557999-52e4f01476d0?auto=format&fit=crop&w=800&q=80" alt="Работа 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -253,13 +250,10 @@
         </div>
     </section>
 
-    <!-- Изменили цвет фона секции контактов на bg-dark-950 для чередования -->
     <section id="contact" class="py-24 bg-dark-950 border-t border-gray-800 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="bg-dark-800 rounded-3xl p-8 md:p-14 shadow-2xl border border-gray-700">
                 <div class="flex flex-col lg:flex-row gap-16">
-                    
-                    <!-- Текстовая информация -->
                     <div class="lg:w-1/2 flex flex-col justify-center">
                         <h2 class="text-brand-500 text-sm font-bold uppercase tracking-widest mb-3">Свяжитесь с нами</h2>
                         <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Готовы преобразить ваше авто?</h3>
@@ -290,11 +284,8 @@
                         </div>
                     </div>
 
-                    <!-- Форма -->
                     <div class="lg:w-1/2">
                         <div class="bg-dark-950 rounded-2xl p-6 md:p-10 border border-gray-800 relative overflow-hidden shadow-inner">
-                            
-                            <!-- Overlay успешной отправки -->
                             <div id="form-success" class="hidden absolute inset-0 bg-dark-950/95 backdrop-blur-sm z-20 flex flex-col items-center justify-center text-center p-8 transition-opacity">
                                 <div class="w-20 h-20 bg-brand-500/20 text-brand-500 rounded-full flex items-center justify-center text-4xl mb-6 border-2 border-brand-500">
                                     <i class="fa-solid fa-check"></i>
@@ -364,36 +355,30 @@
             const successMsg = document.getElementById('form-success');
             const closeSuccessBtn = document.getElementById('btn-close-success');
 
-            // Обработка отправки формы
             form.addEventListener('submit', (e) => {
-                e.preventDefault(); // Предотвращаем перезагрузку страницы
+                e.preventDefault();
                 
                 const submitBtn = form.querySelector('button[type="submit"]');
                 const originalBtnContent = submitBtn.innerHTML;
                 
-                // Визуальный эффект загрузки
                 submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Обработка...';
                 submitBtn.disabled = true;
                 submitBtn.classList.add('opacity-75');
 
-                // Имитация отправки данных на сервер (задержка 1 секунда)
                 setTimeout(() => {
-                    form.reset(); // Очищаем форму
+                    form.reset(); 
                     submitBtn.innerHTML = originalBtnContent;
                     submitBtn.disabled = false;
                     submitBtn.classList.remove('opacity-75');
                     
-                    // Показываем сообщение об успехе
                     successMsg.classList.remove('hidden');
                 }, 1000); 
             });
 
-            // Закрытие сообщения об успехе
             closeSuccessBtn.addEventListener('click', () => {
                 successMsg.classList.add('hidden');
             });
             
-            // Простейшая маска для телефона
             const phoneInput = document.getElementById('phone');
             phoneInput.addEventListener('input', function (e) {
                 let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
